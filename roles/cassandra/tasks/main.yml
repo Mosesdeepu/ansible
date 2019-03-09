@@ -1,0 +1,4 @@
+---
+- include: java.yml
+- include: install_dse.yml
+- include: config_dse.yml

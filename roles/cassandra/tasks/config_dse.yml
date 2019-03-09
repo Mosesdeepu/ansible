@@ -1,0 +1,14 @@
+- block:
+  - name: copy cassandra.yaml
+    template:
+      src: /etc/ansible/roles/cassandra/templates/cassandra.yaml
+      dest: /etc/dse/cassandra/cassandra.yaml
+  - name: copy cassandra rack prop
+    template:
+      src: /etc/ansible/roles/cassandra/templates/cassandra-rackdc.properties
+      dest: /etc/dse/cassandra/cassandra-rackdc.properties
+
+  - name: Start service dse, if not started
+    service:
+      name: dse
+      state: started

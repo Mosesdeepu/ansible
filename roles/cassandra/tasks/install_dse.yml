@@ -1,0 +1,9 @@
+- block:
+  - name: copy cassandra.repo
+    copy:
+      src: /etc/ansible/roles/cassandra/files/cassandra.repo
+      dest: /etc/yum.repos.d/cassandra.repo
+  - name: install cassandra
+    yum:
+      name:
+        - dse-full-6.7.2
